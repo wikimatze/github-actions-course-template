@@ -11,9 +11,17 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install npm and build webpack
+        run: |
+          npm install
+          npm run build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+  test:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x, 20.x]
