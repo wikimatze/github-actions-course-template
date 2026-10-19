@@ -21,13 +21,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        persist-credentials: true
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
+    - name: Install dependencies and update lock file
+      run: npm install
     - name: Build
       run: npm run build
       env:
