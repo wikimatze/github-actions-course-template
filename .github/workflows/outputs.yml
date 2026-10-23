@@ -8,17 +8,21 @@ on:
 jobs:
   print:
     outputs:
-      PRINT_ME: Test
+      PRINT_ME: ${{ env.PRINT_ME }}
     name: print
     runs-on: ubuntu-latest
     steps:
+      - run: echo "$PRINT_ME=test" >> "GITHUB_ENV"
       - run: env | sort
+      -
 
   print-outputs:
     name: print output from "print" step
     needs: print
     runs-on: ubuntu-latest
     steps:
+      - run: env | sort
       - run: echo "hello output $PRINT_ME"
+      - run: echo "hello output from step ${{ neds.print.outputs.PRINT_ME }}"
 
 
