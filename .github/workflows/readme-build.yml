@@ -12,12 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        echo "::group::Building test"
-        echo "Hello world README change"
-        echo "::endgroup::"
+          echo "::group::Building test"
+          echo "Hello world README change"
+          echo "::endgroup::"
       - run: |
-        echo "::group::Building bla"
-        echo "Hello world READMEE change"
-        echo "::endgroup::"
-
+          echo "::group::Building bla"
+          echo "Hello world READMEE change"
+          echo "::endgroup::"
 
