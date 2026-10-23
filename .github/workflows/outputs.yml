@@ -12,7 +12,7 @@ jobs:
     name: print
     runs-on: ubuntu-latest
     steps:
-      - run: echo "$PRINT_ME=test" >> "$GITHUB_ENV"
+      - run: echo "PRINT_ME=test" >> "$GITHUB_ENV"
       - run: env | sort
 
   print-outputs:
