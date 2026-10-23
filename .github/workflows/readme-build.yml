@@ -11,7 +11,8 @@ jobs:
     name: print hello world
     runs-on: ubuntu-latest
     steps:
-      - run: echo "::debug::Set the Octocat variable"
+      - run: echo "::group::Building $name"
       - run: echo "Hello world README change"
+      - run: echo "::endgroup::"
 
 
