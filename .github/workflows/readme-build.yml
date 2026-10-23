@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Build
         run: |
-          cho "::group::Building test"
+          echo "::group::Building test"
           echo "Hello world README change"
           echo "::endgroup::"
       - name: Build bla
