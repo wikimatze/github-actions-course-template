@@ -14,7 +14,6 @@ jobs:
     steps:
       - run: echo "$PRINT_ME=test" >> "GITHUB_ENV"
       - run: env | sort
-      -
 
   print-outputs:
     name: print output from "print" step
@@ -23,6 +22,6 @@ jobs:
     steps:
       - run: env | sort
       - run: echo "hello output $PRINT_ME"
-      - run: echo "hello output from step ${{ neds.print.outputs.PRINT_ME }}"
+      - run: echo "hello output from step ${{ needs.print.outputs.PRINT_ME }}"
 
 
