@@ -1,0 +1,16 @@
+name: readme-build
+
+on:
+  push:
+    paths:
+      - ".github/workflows/readme-build.yml"
+      - "README.md"
+
+jobs:
+  print:
+    name: print hello world
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
+
+
