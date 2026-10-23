@@ -8,9 +8,20 @@ on:
 
 jobs:
   print:
+    environment:
+      name: live
+      url: https://wikimatze.de
     name: print hello world
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello world"
-
+      - name: Build
+        run: |
+          echo "::group::Building test"
+          echo "Hello world README change"
+          echo "::endgroup::"
+      - name: Build bla
+        run: |
+          echo "::group::Building bla"
+          echo "Hello world READMEE change"
+          echo "::endgroup::"
 
