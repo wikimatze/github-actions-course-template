@@ -13,7 +13,8 @@ jobs:
       - run: echo "Hello world"
 
   print-outputs:
-    needs: print output from "print" step
+    name: print output from "print" step
+    needs: print
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello output"
