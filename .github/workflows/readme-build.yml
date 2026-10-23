@@ -8,6 +8,7 @@ on:
 
 jobs:
   print:
+    url: https://wikimatze.de
     name: print hello world
     runs-on: ubuntu-latest
     steps:
