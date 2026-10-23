@@ -11,8 +11,13 @@ jobs:
     name: print hello world
     runs-on: ubuntu-latest
     steps:
-      - run: echo "::group::Building $name"
-      - run: echo "Hello world README change"
-      - run: echo "::endgroup::"
+      - run: |
+        echo "::group::Building test"
+        echo "Hello world README change"
+        echo "::endgroup::"
+      - run: |
+        echo "::group::Building bla"
+        echo "Hello world READMEE change"
+        echo "::endgroup::"
 
 
