@@ -7,16 +7,18 @@ on:
 
 jobs:
   print:
+    outputs:
+      PRINT_ME: Test
     name: print
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello world"
+      - run: env | sort
 
   print-outputs:
     name: print output from "print" step
     needs: print
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello output"
+      - run: echo "hello output $PRINT_ME"
 
 
