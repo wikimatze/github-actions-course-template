@@ -1,4 +1,5 @@
-The team would like: 
+The team would like:
+- test
  - [ ] branch protections
  - [ ] required review approvals
  - [ ] easy way to see when enough approvals has been achieved
