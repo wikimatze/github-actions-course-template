@@ -2,19 +2,18 @@ name: output-build
 
 on:
   push:
-    paths:
-      - ".github/workflows/readme-build.yml"
-      - "README.md"
+    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   print:
-    name: print hello world
+    name: print
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world"
 
   print-outputs:
-    needs: print
+    needs: print output from "print" step
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello output"
