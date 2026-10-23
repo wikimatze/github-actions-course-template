@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: GIPHY Generator
+        if: >-
+          (github.event_name == 'issues' &&
+           github.event.issue.body != null) ||
+          (github.event_name == 'pull_request' &&
+           github.event.pull_request.body != null) ||
+          (github.event_name == 'issue_comment' &&
+           github.event.comment.body != null)
         id: giphy_generator
         uses: iamhughes/giphy-generator@v1
         env:
